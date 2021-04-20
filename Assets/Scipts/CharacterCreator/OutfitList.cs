@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OuttfitList : MonoBehaviour
+public class OutfitList : MonoBehaviour
 {
-   public TMPro.TMP_Dropdown myDropdown;
+   //public TMPro.TMP_Dropdown myDropdown;
 
 
     [Header("Sprite To Change")]
@@ -19,11 +19,11 @@ public class OuttfitList : MonoBehaviour
     void Start()
     {
 
-        PopulateDropdown(myDropdown, options);
+       //PopulateDropdown(myDropdown, options);
 
     }
 
-
+/*
     void PopulateDropdown(TMPro.TMP_Dropdown dropdown, List<Sprite> optionsArray)
     {
         List<string> options = new List<string>();
@@ -33,7 +33,7 @@ public class OuttfitList : MonoBehaviour
         }
         dropdown.ClearOptions();
         dropdown.AddOptions(options);
-    }
+    }*/
 
     public void OnOptionChanged(int value)
     {

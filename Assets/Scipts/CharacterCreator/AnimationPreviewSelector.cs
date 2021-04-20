@@ -37,8 +37,9 @@ public class AnimationPreviewSelector : MonoBehaviour
 
     public void OnOptionChanged(int value)
     {
-				//animator.SetInteger("AnimState", value);
-		if(value == 0)
+		animator.SetInteger("AnimState", value);
+		
+		/*if(value == 0)
 		{		
 		animator.SetInteger("AnimState", 0);
 		}
@@ -56,7 +57,7 @@ public class AnimationPreviewSelector : MonoBehaviour
 		{		
 		animator.SetInteger("AnimState", 3);
 		}
-
+*/
 
 
 

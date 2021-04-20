@@ -16,10 +16,12 @@ public class CharacterCreator : MonoBehaviour
     //SpriteRenderer spriteRender;
     public ColorPickerTester colourPicker;
 
-	public OuttfitList[] list = new OuttfitList[2];
+	public OutfitList[] list = new OutfitList[2];
 	
     public SpriteRenderer[] clothing = new SpriteRenderer[6];
-
+	
+	public string clothingType;
+	public ClothingButtonGrid grid;
 
 
 
@@ -38,10 +40,10 @@ public class CharacterCreator : MonoBehaviour
 	
 	public void RandomiseChar()
     {
-		 foreach (OuttfitList clothing in list)
+		 foreach (OutfitList clothing in list)
 		 {
 			 
-			clothing.bodyPart.sprite = clothing.options[Random.Range(0, 2)];
+			clothing.bodyPart.sprite = clothing.options[Random.Range(0, 4)];
 		 }
     }
 	
@@ -62,6 +64,46 @@ public class CharacterCreator : MonoBehaviour
 	 public void OnOptionChanged(int value)
     {
         colourPicker.sprite = clothing[value];
+    }
+	
+	public void ChangeClothingCategory()
+	{
+		
+		if(clothingType == "HEADButton")
+		{
+
+			grid = GameObject.Find("HeadScrollView").GetComponentInChildren<ClothingButtonGrid>();
+			grid.PopulateDropdown(grid.myDropdown, grid.options);
+		}
+					
+		else if(clothingType == "BODYButton")
+		{
+			
+			grid = GameObject.Find("BodyScrollView").GetComponentInChildren<ClothingButtonGrid>();
+			grid.PopulateDropdown(grid.myDropdown, grid.options);
+		}
+		
+		else if(clothingType == "ARMSButton")
+		{
+			
+			grid = GameObject.Find("ArmsScrollView").GetComponentInChildren<ClothingButtonGrid>();
+			grid.PopulateDropdown(grid.myDropdown, grid.options);
+		}
+
+	}
+	
+	
+	//This is when we swap categories, we would need to update the outfit list... so it can update the grid of buttons
+	public void UpdateOutfitList()
+	{
+		
+	}
+	
+	
+	public void Return()
+    {
+      
+		SceneManager.LoadScene(0);
     }
 	
 	

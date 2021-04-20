@@ -8,8 +8,8 @@ public class MainMenu : MonoBehaviour
     
     public void PlayGame()
     {
-		//Goes from Main Menu to Game for now
-        SceneManager.LoadScene(2); 
+		
+        SceneManager.LoadScene(1); 
 
     }
 
