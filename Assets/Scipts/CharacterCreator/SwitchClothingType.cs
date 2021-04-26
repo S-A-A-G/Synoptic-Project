@@ -15,10 +15,10 @@ public class SwitchClothingType : MonoBehaviour
     public Color selectedColor = Color.red;
 	
 	public CharacterCreator cc;
-	public ClothingButtonGrid grid;
 	
 	
-	//ClothingButtonGrid gridToGoTo;
+	
+
 		
     // Update is called once per frame
 	
@@ -29,26 +29,7 @@ public class SwitchClothingType : MonoBehaviour
     public void OnButtonSwitched()
     {
 	
-
-/*
-	
-		if(clothingType == "Head")
-		{
-			//grid.outfitlist = GameObject.Find("BODYButton").GetComponent<OutfitList>();
-			gridToGoTo = GameObject.Find("HeadScrollView").GetComponent<ClothingButtonGrid>();
-			//grid.options = body.options;
-			grid.PopulateDropdown(grid.myDropdown, gridToGoTo.options);
-		}
-					
-		else if(clothingType == "Body")
-		{
-			///grid.outfitlist = GameObject.Find("BODYButton").GetComponent<OutfitList>();
-			
-			gridToGoTo = GameObject.Find("BodyScrollView").GetComponent<ClothingButtonGrid>();
-			//grid.options = body.options;
-			grid.PopulateDropdown(grid.myDropdown, gridToGoTo.options);
-		}*/
-							
+						
 
 	
 	
@@ -76,9 +57,9 @@ public class SwitchClothingType : MonoBehaviour
           
         }
 			
-		cc.clothingType = EventSystem.current.currentSelectedGameObject.name;
+		//cc.clothingType = EventSystem.current.currentSelectedGameObject.name;
 		
-		cc.ChangeClothingCategory();
+		//cc.ChangeClothingCategory();
 		
     }
 }

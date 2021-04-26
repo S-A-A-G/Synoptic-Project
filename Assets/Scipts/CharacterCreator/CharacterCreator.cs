@@ -16,12 +16,13 @@ public class CharacterCreator : MonoBehaviour
     //SpriteRenderer spriteRender;
     public ColorPickerTester colourPicker;
 
+	//For Randomisation to work
 	public OutfitList[] list = new OutfitList[2];
 	
     public SpriteRenderer[] clothing = new SpriteRenderer[6];
 	
 	public string clothingType;
-	public ClothingButtonGrid grid;
+
 
 
 
@@ -66,6 +67,7 @@ public class CharacterCreator : MonoBehaviour
         colourPicker.sprite = clothing[value];
     }
 	
+	/*
 	public void ChangeClothingCategory()
 	{
 		
@@ -90,7 +92,7 @@ public class CharacterCreator : MonoBehaviour
 			grid.PopulateDropdown(grid.myDropdown, grid.options);
 		}
 
-	}
+	}*/
 	
 	
 	//This is when we swap categories, we would need to update the outfit list... so it can update the grid of buttons
