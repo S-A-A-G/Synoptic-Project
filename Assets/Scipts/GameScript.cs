@@ -11,7 +11,8 @@ public class GameScript : MonoBehaviour
     {
         // Instantiate at position (0, 0, 0) and zero rotation.
         Instantiate(Player, new Vector3(0, 0, 0), Quaternion.identity);
-		Player.transform.localScale = new Vector3(1, 1, 1);
+		Player.transform.localScale = Vector3.one * 0.2f;
+
     }
 
     // Update is called once per frame
