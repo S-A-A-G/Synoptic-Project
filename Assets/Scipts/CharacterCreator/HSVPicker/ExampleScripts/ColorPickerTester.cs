@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEditor;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace HSVPicker.Examples
@@ -7,8 +11,8 @@ namespace HSVPicker.Examples
     {
 
 
+		public SpriteRenderer sprite; 
 
-        public SpriteRenderer sprite;
       
         public ColorPicker picker;
 
@@ -20,20 +24,23 @@ namespace HSVPicker.Examples
 	    void Start () 
         {
             
-            picker.onValueChanged.AddListener(color =>
-            {
-                //render.material.color = color;
-                sprite.color = color;
-                Color = color;
-            });
+			
+				picker.onValueChanged.AddListener(color =>
+				{
+				
+					//render.material.color = color;
+					sprite.color = color;
+					Color = color;
+					
+				});
 
-            //render.material.color = picker.CurrentColor;
-            sprite.color = picker.CurrentColor;
-            if (SetColorOnStart) 
-            {
-                picker.CurrentColor = Color;
-            }
- 
+				//render.material.color = picker.CurrentColor;
+				sprite.color = picker.CurrentColor;
+				if (SetColorOnStart) 
+				{
+					picker.CurrentColor = Color;
+				}
+							
 
         }
 

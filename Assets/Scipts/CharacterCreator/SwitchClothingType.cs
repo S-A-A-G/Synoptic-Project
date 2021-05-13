@@ -60,7 +60,7 @@ public class SwitchClothingType : MonoBehaviour
 	  dropdownOption.SetActive(false);
 	}
 		
-	 
+	 cc.UpdateColourPickerSprite();
 			
 		//cc.clothingType = EventSystem.current.currentSelectedGameObject.name;
 		

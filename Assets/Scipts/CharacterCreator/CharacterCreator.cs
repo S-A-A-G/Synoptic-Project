@@ -22,8 +22,8 @@ public class CharacterCreator : MonoBehaviour
 
 	 
 	public List<GameObject> headPanels = new List<GameObject>(); 
-
-	 
+	public List<GameObject> colourableScrollviews = new List<GameObject>(); 
+	 public List<SpriteRenderer> spritesToColourIn = new List<SpriteRenderer>(); 
     public SpriteRenderer[] clothing = new SpriteRenderer[6];
 	
 	public string clothingType;
@@ -53,6 +53,37 @@ public class CharacterCreator : MonoBehaviour
 		 }
     }
 	
+	
+	public void UpdateColourPickerSprite()
+	{
+		
+		//We can do an if statement for all panels... Well 8 scrollviews
+		//Hat could be ClothingOptions[0] , well.. only the ones that needs to be coloured in... anything else,disables the colour wheel.
+	
+	
+	//HAT
+		if(colourableScrollviews[0].activeSelf == true)
+		{
+			colourPicker.sprite = spritesToColourIn[0];
+		}
+		
+	//EYE IRIS
+		else if(colourableScrollviews[1].activeSelf == true)
+		{
+			colourPicker.sprite = spritesToColourIn[1];
+		}
+	//MOUTH
+	
+	//TORSO
+	
+	
+	//LEGS
+		
+	}
+	
+
+	
+	
     public void ResetChar()
     {
 		SceneManager.LoadScene(1);
@@ -71,7 +102,7 @@ public class CharacterCreator : MonoBehaviour
 		//We want to set the right panel active depending on the dropdown value.
 		GameObject currentHeadPart = headPanels[value];
 		currentHeadPart.SetActive(true);
-		
+		UpdateColourPickerSprite();
 	}
 
 	

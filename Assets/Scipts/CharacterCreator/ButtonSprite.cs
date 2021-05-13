@@ -8,6 +8,8 @@ public class ButtonSprite : MonoBehaviour
 {
 	
 	public Sprite buttonSprite;
+	public bool isTorso = false;
+	public List<Sprite> armSprites = new List<Sprite>();
 	
 	[Header("Sprite To Change")]
     public List<SpriteRenderer> bodyPart;
@@ -20,23 +22,28 @@ public class ButtonSprite : MonoBehaviour
 	   newImage.sprite = buttonSprite;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-	
+
+
 	
 	public void updateCharacter()
 	{
 		//Here we can  probably use similar code from Outfit List class... The sprite change. 
 		//We would have to consider when changing hands we change it for left and right , anything symmetrical
 		
+		
+		if(isTorso)
+		{
+			bodyPart[0].sprite = buttonSprite;
+			bodyPart[1].sprite = armSprites[0];
+			bodyPart[2].sprite =  armSprites[1];
+		}
+		else{
+			
 		foreach(SpriteRenderer bodyFeature in bodyPart)
 		{
 				bodyFeature.sprite = buttonSprite;
-	}
-
+		}
+		}
 		
 		
 	}
