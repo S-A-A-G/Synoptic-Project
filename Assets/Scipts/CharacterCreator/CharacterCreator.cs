@@ -19,6 +19,11 @@ public class CharacterCreator : MonoBehaviour
 	//For Randomisation to work
 	public OutfitList[] list = new OutfitList[2];
 	
+
+	 
+	public List<GameObject> headPanels = new List<GameObject>(); 
+
+	 
     public SpriteRenderer[] clothing = new SpriteRenderer[6];
 	
 	public string clothingType;
@@ -28,7 +33,7 @@ public class CharacterCreator : MonoBehaviour
 
     void Start()
     {
-        OnOptionChanged(0);
+        //OnOptionChanged(0);
     }
 
 	
@@ -53,6 +58,21 @@ public class CharacterCreator : MonoBehaviour
 		SceneManager.LoadScene(1);
     }
 	
+	
+	public void FocusHeadPartsDropdown(int value)
+	{
+		
+			
+	    foreach (GameObject headPart in headPanels)
+        {  
+             headPart.SetActive(false); 
+        }      
+
+		//We want to set the right panel active depending on the dropdown value.
+		GameObject currentHeadPart = headPanels[value];
+		currentHeadPart.SetActive(true);
+		
+	}
 
 	
 	
@@ -62,10 +82,10 @@ public class CharacterCreator : MonoBehaviour
 		SceneManager.LoadScene(2);
     }
 	
-	 public void OnOptionChanged(int value)
-    {
-        colourPicker.sprite = clothing[value];
-    }
+	 //public void OnOptionChanged(int value)
+   // {
+        //colourPicker.sprite = clothing[value];
+   // }
 	
 	/*
 	public void ChangeClothingCategory()
