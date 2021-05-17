@@ -52,11 +52,11 @@ public class PickableCollector : MonoBehaviour
 		}
 		else if (chance > 0.4 && chance <= 0.95 )
 		{
-			gameManager.AddPoints(200,500);
+			gameManager.AddPoints(350,500);
 		}
 		else
 		{
-			gameManager.AddPoints(-200,100);
+			gameManager.AddPoints(-100,350);
 		}
 		
 		

@@ -18,7 +18,6 @@ public class BasicAI : MonoBehaviour
     float horizontalMovement;
 	public GameObject groundObject;
 	
-	bool CanSeePlayer = false;
 	
 	RaycastHit2D lineTraceGround;
 	RaycastHit2D lineTraceForward;
@@ -46,7 +45,7 @@ public class BasicAI : MonoBehaviour
 		transform.Translate(Vector2.right * walkSpeed * Time.deltaTime);
 		
 		//Linetrace to detect ground
-		lineTraceGround = Physics2D.Raycast(groundObject.transform.position, Vector2.down,2f);
+		lineTraceGround = Physics2D.Raycast(groundObject.transform.position, Vector2.down,5f);
 		
 		if(!lineTraceGround.collider){
 			if(isFacingRight) {

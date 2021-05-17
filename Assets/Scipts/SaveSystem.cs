@@ -4,11 +4,12 @@ using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
+/*
 
 public static class SaveSystem 
 {
 
-    public static void SaveGame(CharacterCreator savedChar)
+    public static void SaveGame(ThePlayerData savedChar)
     {
         BinaryFormatter formatter = new BinaryFormatter();
         string path = Application.persistentDataPath + "/character";
@@ -41,3 +42,4 @@ public static class SaveSystem
         }
     }
 }
+*/

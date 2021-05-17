@@ -17,10 +17,11 @@ public class CharacterCreator : MonoBehaviour
     public ColorPickerTester colourPicker;
 
 	//For Randomisation to work
-	public OutfitList[] list = new OutfitList[2];
-	
+	public Sprite[] legsSprites;
+	public SpriteRenderer leftLeg;
+	public SpriteRenderer rightLeg;
 
-	 
+
 	public List<GameObject> headPanels = new List<GameObject>(); 
 	public List<GameObject> eyeTypePanels = new List<GameObject>(); 
 	public SpriteRenderer eyeBase;
@@ -31,15 +32,21 @@ public class CharacterCreator : MonoBehaviour
 	 public List<SpriteRenderer> spritesToColourIn = new List<SpriteRenderer>(); 
     public SpriteRenderer[] clothing = new SpriteRenderer[6];
 	
-	public string clothingType;
+
+
+	public List<GameObject> invisFloors;
+	public Camera cam1;
+	public Camera cam2;
 
 
 
-
-    void Start()
+	void Start()
     {
-        //OnOptionChanged(0);
-    }
+		cam1.gameObject.SetActive(true);
+		cam2.gameObject.SetActive(false);
+		cam1.enabled = true;
+		cam2.enabled = false;
+	}
 
 	
 	
@@ -51,12 +58,11 @@ public class CharacterCreator : MonoBehaviour
 	
 	public void RandomiseChar()
     {
-		 foreach (OutfitList clothing in list)
-		 {
-			 
-			clothing.bodyPart.sprite = clothing.options[Random.Range(0, 4)];
-		 }
-    }
+
+			Sprite randomLeg = legsSprites[Random.Range(0, legsSprites.Length)];
+			rightLeg.sprite = randomLeg;
+			leftLeg.sprite = randomLeg;
+	}
 	
 	
 	public void UpdateColourPickerSprite()
@@ -116,9 +122,18 @@ public class CharacterCreator : MonoBehaviour
     {
 		//PrefabUtility.SaveAsPrefabAsset(character, "Assets/PlayerPrefabs/Player.prefab");
 
-		SaveSystem.SaveGame(this);
-		SceneManager.LoadScene(2);
-    }
+		//SaveSystem.SaveGame(this);
+		//SceneManager.LoadScene(2);
+		cam1.gameObject.SetActive(false);
+		cam2.gameObject.SetActive(true);
+		cam1.enabled = false;
+		cam2.enabled = true;
+
+		foreach (GameObject floorDisable in invisFloors)
+		{
+			floorDisable.SetActive(false);
+		}
+	}
 	
 	 //public void OnOptionChanged(int value)
    // {

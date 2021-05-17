@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2166256942112433461}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.84, y: -0.01, z: 0}
+  m_LocalPosition: {x: 0.865, y: -0.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3584986072317968747}
@@ -55,7 +55,7 @@ Transform:
   m_GameObject: {fileID: 3584986071727264570}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.04, y: -1.45, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 3584986072317968747}
   m_RootOrder: 0
@@ -86,7 +86,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3584986071786519454}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.094, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3584986072317968747}
@@ -231,6 +231,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 3
+  hasFireballAbility: 0
+  canShootFireball: 0
   shoot: {fileID: 2166256942112433461}
   fireball: {fileID: 8624330908561218180, guid: 1edd491f423faf44797f2ac245ba63dd, type: 3}
   groundObject: {fileID: 3584986071727264570}
