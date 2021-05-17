@@ -42,12 +42,14 @@ public class GameScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+		SaveSystem.LoadCharacter();
 		playerMovement.groundCheckObject = groundChecker;
 		playerMovement.groundLayer = LayerMask.GetMask("Ground");
 		
 		points = 0;
 		UpdatePointsText();
 		UpdateHearts();
+
 		
 
 

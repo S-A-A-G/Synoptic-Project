@@ -114,7 +114,9 @@ public class CharacterCreator : MonoBehaviour
 	
 	 public void PlayGame()
     {
-        PrefabUtility.SaveAsPrefabAsset(character, "Assets/PlayerPrefabs/Player.prefab");
+		//PrefabUtility.SaveAsPrefabAsset(character, "Assets/PlayerPrefabs/Player.prefab");
+
+		SaveSystem.SaveGame(this);
 		SceneManager.LoadScene(2);
     }
 	

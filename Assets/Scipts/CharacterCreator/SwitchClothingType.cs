@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Editor.CharacterCreator;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
