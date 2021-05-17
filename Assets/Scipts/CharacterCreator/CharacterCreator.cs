@@ -22,6 +22,11 @@ public class CharacterCreator : MonoBehaviour
 
 	 
 	public List<GameObject> headPanels = new List<GameObject>(); 
+	public List<GameObject> eyeTypePanels = new List<GameObject>(); 
+	public SpriteRenderer eyeBase;
+	public List<Sprite> eyeTypeSprites = new List<Sprite>();
+	
+	
 	public List<GameObject> colourableScrollviews = new List<GameObject>(); 
 	 public List<SpriteRenderer> spritesToColourIn = new List<SpriteRenderer>(); 
     public SpriteRenderer[] clothing = new SpriteRenderer[6];
@@ -158,6 +163,26 @@ public class CharacterCreator : MonoBehaviour
       
 		SceneManager.LoadScene(0);
     }
+	
+	
+	public void SwitchEyeType(int value)
+	{
+		
+		
+		//Toggle Active of each panel
+		  foreach (GameObject eyePart in eyeTypePanels)
+        {  
+             eyePart.SetActive(false); 
+        }      
+
+		//We want to set the right panel active depending on the dropdown value.
+		GameObject currentEyePanel = eyeTypePanels[value];
+		currentEyePanel.SetActive(true);
+		
+		eyeBase.sprite = eyeTypeSprites[value];
+		UpdateColourPickerSprite();
+		
+	}
 	
 	
 }

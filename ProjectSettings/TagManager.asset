@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
+  - Character
+  - DangerObstacle
   layers:
   - Default
   - TransparentFX
@@ -52,4 +55,7 @@ TagManager:
     locked: 0
   - name: Enemies
     uniqueID: 3937369511
+    locked: 0
+  - name: UIElements
+    uniqueID: 1328781315
     locked: 0
