@@ -15,7 +15,7 @@ public class CameraScript : MonoBehaviour
    private void FixedUpdate()
    {
 		if(FocusOnPlayer)
-		transform.position = Vector3.Lerp(transform.position, player.transform.position + new Vector3(0,0,10), 4 * Time.fixedDeltaTime );
+		transform.position = Vector3.Lerp(transform.position, player.transform.position + new Vector3(0,0,-10), 4 * Time.fixedDeltaTime );
 	   
    }
 }
