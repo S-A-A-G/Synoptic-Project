@@ -23,7 +23,6 @@ public class AddCamComponent : MonoBehaviour
 
 
 
-
 	}
 
 }

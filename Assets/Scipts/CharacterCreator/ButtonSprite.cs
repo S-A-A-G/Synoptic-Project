@@ -18,7 +18,8 @@ public class ButtonSprite : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       newImage =  this.transform.Find("Image").GetComponent<Image>();
+       //newImage =  this.transform.Find("Image").GetComponent<Image>();
+	   newImage  = image.sprite;
 	   newImage.sprite = buttonSprite;
     }
 
